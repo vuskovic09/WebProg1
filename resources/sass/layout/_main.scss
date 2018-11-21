@@ -1,0 +1,13 @@
+.main {
+	width: 100%;
+	margin-top: 70px;
+
+	&-image {
+		padding: 25px 0px;
+		background-color: $color-background;
+
+		img{
+			@include responsive-img;
+		} 
+	}
+}

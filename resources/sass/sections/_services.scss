@@ -1,0 +1,26 @@
+.services {
+	padding-top: 20px;
+
+	&-holder {
+		background-color: $color-background;
+		padding: $padding*2 $padding*5;
+	}
+
+	&-box {
+		@include flex (flex, column, no-wrap, space-between, center);
+
+		opacity: 0;
+		transform: translateY(-20px);
+		transition: 0.6s ease-in;
+
+		p {
+			text-align: center;
+		}
+	}
+
+	.js-go {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+
+}
