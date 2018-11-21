@@ -21,9 +21,16 @@ $(document).ready(function() {
    $(document).bind('scroll', function(){
 
       var scrollOffset = $(document).scrollTop();
+			var containerOffsetHome = $('.header').offset().top - window.innerHeight;
       var containerOffsetProgress = $('.js-progressBar').offset().top - window.innerHeight/2;
       var containerOffsetServices = $('.js-services').offset().top - window.innerHeight/2;
+			var containerOffsetContact = $('.js-contact').offset().top - window.innerHeight/2;
 			var containerOffsetNews = $('.js-news').offset().top - window.innerHeight/2;
+
+			if (scrollOffset > containerOffsetHome) {
+				$('.header-content-navigation ul li a').removeClass('active');
+				$('#navHome').addClass('active');
+			}
 
       if (scrollOffset > containerOffsetProgress) {
         $('.js-progressBar').each(function(){
@@ -32,6 +39,8 @@ $(document).ready(function() {
              'width': progress + '%'
           });
        });
+				$('.header-content-navigation ul li a').removeClass('active');
+				$('#navAbout').addClass('active');
       }
 
       if (scrollOffset > containerOffsetServices) {
@@ -43,7 +52,14 @@ $(document).ready(function() {
           }, i*500);
           i++;
         });
+				$('.header-content-navigation ul li a').removeClass('active');
+				$('#navServices').addClass('active');
       }
+
+			if (scrollOffset > containerOffsetContact) {
+				$('.header-content-navigation ul li a').removeClass('active');
+				$('#navContact').addClass('active');
+			}
 
 			if (scrollOffset > containerOffsetNews) {
 				var i = 1;
@@ -54,6 +70,8 @@ $(document).ready(function() {
 					}, i*280);
 					i++;
 				});
+				$('.header-content-navigation ul li a').removeClass('active');
+				$('#navNews').addClass('active');
 			}
 
    });
@@ -70,10 +88,10 @@ $(document).ready(function() {
 
 			//NAV LIST RESET
 			//$('.header-content-navigation ul li a').removeClass('active');
-			$('.header-content-navigation ul li a').removeClass('active');
 
 			//ADD ACTIVE CLASS
-			$(this).addClass('active');
+			//$(this).addClass('active');
+
    });
 
 	 $('.footer-menu').find('a').click(function(event){
