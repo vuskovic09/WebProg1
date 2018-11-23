@@ -1,0 +1,25 @@
+.collabs-holder{
+	background-color: $color-background;
+	height: auto;
+	padding: 20px;
+
+	.collabs {
+
+		.js-left {
+			opacity: 0;
+			transform: translatex(-20px);
+			transition: 0.8s ease-in;
+		}
+
+		.js-right {
+			opacity: 0;
+			transform: translatex(20px);
+			transition: 0.8s ease-in;
+		}
+
+		.js-go-side {
+			opacity: 1;
+			transform: translatex(0px);
+		}
+	}
+}
