@@ -113,6 +113,15 @@ $(document).ready(function() {
     }, 500);
  	});
 
+	$('.back-to-top').click(function(event){
+		event.preventDefault();
+		var target = $(this).attr('href');
+
+    $('html, body').animate({
+      scrollTop: $("#" + target).offset().top / 1.15
+    }, 500);
+	});
+
 });
 
 
