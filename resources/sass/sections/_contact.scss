@@ -10,29 +10,38 @@
 
 		&-body {
 
-			input[type=text], select, textarea {
-	    width: 50%;
-	    padding: 10px;
-	    border: 1px solid #ccc;
-	    border-radius: 4px;
-	    box-sizing: border-box;
-	    margin-top: 6px;
-	    margin-bottom: 10px;
-	    resize: vertical;
-			}
+			&-form {
+				text-align: center;
 
-			input[type=submit] {
-		    background-color: $color-secondary;
-		    color: white;
-		    padding: 12px 20px;
-		    border: none;
-		    border-radius: 4px;
-		    cursor: pointer;
-				transition: .7s;
-			}
+					input[type=text], select, textarea {
+			    width: 90%;
+			    padding: 10px;
+			    border: 1px solid #ccc;
+			    border-radius: 4px;
+			    box-sizing: border-box;
+			    margin-top: 6px;
+			    margin-bottom: 10px;
+		    	resize: vertical;
+				}
 
-			input[type=submit]:hover {
-			  background-color: $color-secondary/1.5;
+				input[type=button]{
+					padding: 10px;
+					background: $color-secondary;
+				  border-radius: 100px;
+				  padding: 10px 40px;
+				  color: $color-black;
+				  text-decoration: none;
+				  font-size: 1.5em;
+					font-family: sans-serif;
+					font-weight: bold;
+					border: none;
+					cursor: pointer;
+					transition: 0.5s;
+
+					&:hover {
+						background-color: $color-secondary*1.15;
+					}
+				}
 			}
 		}
 	}

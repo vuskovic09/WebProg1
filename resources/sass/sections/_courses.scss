@@ -1,9 +1,14 @@
-.collabs-holder{
-	background-color: $color-background;
+.courses-holder{
+	background-color: $color-white;
 	height: auto;
 	padding: 20px;
 
-	.collabs {
+	.courses {
+
+		img{
+			border-radius: 3%;
+			box-shadow: 3px 3px 5px #c2c2c2;
+		}
 
 		.js-left {
 			opacity: 0;

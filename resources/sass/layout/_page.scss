@@ -1,4 +1,21 @@
 .wrapper {
 	overflow-x: hidden;
 	width: 100%;
+
+	.back-to-top {
+		padding: 60px;
+		background-color: green;
+		position: fixed;
+		right: 100px;
+		bottom: 100px;
+		border-radius: 100%;
+		opacity: 0.8;
+		display: none;
+	}
+}
+
+.section {
+	&-header:first-of-type {
+		margin-bottom: 40px;
+	}
 }

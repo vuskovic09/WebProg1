@@ -3,11 +3,30 @@
 	margin-top: 70px;
 
 	&-image {
+		min-height: 400px;
 		padding: 25px 0px;
-		background-color: $color-background;
+		background-color: $color-white;
 
-		img{
-			@include responsive-img;
-		} 
+		&-content {
+			height: 100%;
+			position: absolute;
+			text-align: center;
+
+			span {
+				margin-bottom: 20px;
+				font-size: 55px;
+			}
+
+			.paraHold {
+				border-radius: 10px;
+				width: auto;
+
+
+				p {
+					margin-top: 20px;
+					font-size: 32px;
+				}
+			}
+		}
 	}
 }
