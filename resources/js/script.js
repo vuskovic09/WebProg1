@@ -24,6 +24,129 @@ $(document).ready(function() {
 	});
 
 
+window.addEventListener("load", qOne);
+window.addEventListener("load", qTwo);
+window.addEventListener("load", qThree);
+document.getElementById("checkTest").addEventListener("click", testCheck);
+
+	function qOne(){
+		var questions;
+		var write;
+		var i;
+
+		questions = ["My name be John", "My name does John", "My name is John"];
+		write += "<option value = '0'>Izaberite...</option>";
+
+		for(i = 0; i < questions.length; i++){
+			write += "<option value='" + questions[i] + "'>" + questions[i] + "</option>";
+		}
+		document.getElementById("qOne").innerHTML = write;
+	}
+
+	function qTwo(){
+		var questions;
+		var write;
+
+		questions = ["Yesterday, I went to the store", "Yesterday, I have go to the store", "Yesterday, I will go to the store"];
+
+		write = "";
+
+		for(var i = 0; i < questions.length; i++){
+
+			write += "<input type='radio' name='qCheckOne' value='" + questions[i] + "' />" + questions[i] + "<br/>";
+
+		}
+		document.getElementById("qTwo").innerHTML = write;
+	}
+
+	function qThree(){
+	var questions;
+	var write;
+
+	questions = ["I am tired", "I have tired", "I is tired"];
+
+	write = "";
+
+	for(var i = 0; i < questions.length; i++){
+
+		write += "<input type='radio' name='qCheckTwo' value='" + questions[i] + "' />" + questions[i] + "<br/>";
+
+	}
+	document.getElementById("qThree").innerHTML = write;
+	}
+
+	function testCheck(){
+		var flagTwo = 0;
+		var flagThree = 0;
+
+		qOne = document.getElementById("qOne");
+		qOnePick = qOne.options[qOne.selectedIndex].value;
+
+		qTwo = document.getElementsByName("qCheckOne");
+		qTwoPick = "";
+
+		qThree = document.getElementsByName("qCheckTwo");
+		qThreePick = "";
+
+		arrayError = [];
+		arrayOK = [];
+
+		if(qOnePick == "0"){
+			arrayError.push("Izaberite odgovor na prvo pitanje.");
+		}
+		else{
+			arrayOK.push(qOnePick);
+		}
+
+		for(var i = 0; i < qTwo.length; i++){
+
+			if(qTwo[i].checked){
+				qTwoPick = qTwo[i].value;
+				arrayOK.push(qTwoPick);
+				flagTwo = 0;
+				break;
+			}
+			else {
+				flagTwo = 1;
+			}
+		}
+
+		for(var i = 0; i < qThree.length; i++){
+
+			if(qThree[i].checked){
+				qThreePick = qThree[i].value;
+				arrayOK.push(qThreePick);
+				flagThree = 0;
+				break;
+			}
+			else{
+			 flagThree = 1;
+			}
+		}
+
+		if (flagTwo) {
+			arrayError.push("Izaberite odgovor na drugo pitanje.");
+		}
+		if (flagThree) {
+			arrayError.push("Izaberite odgovor na treće pitanje.");
+		}
+
+		var list = "<ul>";
+
+		if(arrayError.length != 0){
+			for(var i = 0; i < arrayError.length; i++){
+				list += "<li style='color:#ff0000'>" + arrayError[i]+ "</li>";
+			}
+		}
+		else{
+			for(var i = 0; i < arrayOK.length; i++){
+				list += "<li>" + arrayOK[i]+ "</li>";
+			}
+		}
+		list += "</ul>";
+		document.getElementById("result").innerHTML = list;
+	}
+
 //ACCORDION
 	$('#js-click').click(function(){
 		event.stopPropagation();

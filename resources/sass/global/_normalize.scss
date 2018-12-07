@@ -197,6 +197,7 @@ textarea {
 [type="radio"] {
 	box-sizing: border-box;
 	padding: 0;
+	-webkit-appearance:checkbox;
 }
 
 [type="number"]::-webkit-inner-spin-button,
