@@ -11,10 +11,14 @@
 		&-body {
 
 			&-form {
-				text-align: center;
+				text-align: left;
 
+				label {
+					font-weight: bolder;
+					text-align: left;
+				}
 					input[type=text], select, textarea {
-			    width: 90%;
+			    width: 100%;
 			    padding: 10px;
 			    border: 1px solid #ccc;
 			    border-radius: 4px;

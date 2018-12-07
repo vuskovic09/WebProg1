@@ -1,60 +1,53 @@
-.footer {
-	background-color: $color-secondary;
+.footer{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
 
-	&-menu {
-		@include flex(flex, column, no-wrap, space-between, center);
-		margin: 0px;
+	padding: 45px 50px;
+	margin-top: 80px;
 
-		li {
-			list-style-type: none;
-			padding: 10px;
+	&-left {
+		color:  #8f9296;
+		font-size: 14px;
+		margin: 0;
+	}
 
-			a {
-				text-decoration: none;
-				color: $color-black;
-				font-weight: 700;
-			}
+	&-links {
+		font-size:18px;
+		font-weight: bold;
+		color:  #ffffff;
+		margin: 0 0 10px;
+		padding: 0;
+
+		a {
+			display:inline-block;
+			line-height: 1.8;
+			text-decoration: none;
+			color:  inherit;
 		}
 	}
 
-	&-social {
-		@include flex(flex, row, no-wrap, space-between, flex-start);
-		margin: 0px;
-		padding-top: 70px;
-		padding-left: 0px;
+	&-right {
+		float: right;
+		margin-top: 6px;
+		max-width: 180px;
 
-		li {
-			list-style-type: none;
-			padding: 10px;
+		a {
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			background-color:  #33383b;
+			border-radius: 2px;
 
-			a {
-				font-size: 35px;
-				text-decoration: none;
-				color: $color-black;
-				font-weight: 700;
-				transition: 0.5s ease-in;
+			font-size: 20px;
+			color: #ffffff;
+			text-align: center;
+			line-height: 35px;
 
-				&:hover {
-					position: relative;
-					font-size: 49px;
-				}
-			}
+			margin-left: 3px;
 		}
 	}
-
-	&-contact {
-		@include flex(flex, column, no-wrap, space-between, left);
-		margin: 0px;
-		padding-top: 40px;
-
-		li {
-			list-style-type: none;
-			padding: 10px;
-
-			i {
-				font-size: 17px;
-			}
-		}
-	}
-
 }
